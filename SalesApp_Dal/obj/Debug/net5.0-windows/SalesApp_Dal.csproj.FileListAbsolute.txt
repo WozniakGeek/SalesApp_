@@ -1,0 +1,11 @@
+C:\Users\USER\Documents\GitHub\SalesApp_\SalesApp_Dal\bin\Debug\net5.0-windows\SalesApp_Dal.deps.json
+C:\Users\USER\Documents\GitHub\SalesApp_\SalesApp_Dal\bin\Debug\net5.0-windows\SalesApp_Dal.dll
+C:\Users\USER\Documents\GitHub\SalesApp_\SalesApp_Dal\bin\Debug\net5.0-windows\ref\SalesApp_Dal.dll
+C:\Users\USER\Documents\GitHub\SalesApp_\SalesApp_Dal\bin\Debug\net5.0-windows\SalesApp_Dal.pdb
+C:\Users\USER\Documents\GitHub\SalesApp_\SalesApp_Dal\obj\Debug\net5.0-windows\SalesApp_Dal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Documents\GitHub\SalesApp_\SalesApp_Dal\obj\Debug\net5.0-windows\SalesApp_Dal.AssemblyInfoInputs.cache
+C:\Users\USER\Documents\GitHub\SalesApp_\SalesApp_Dal\obj\Debug\net5.0-windows\SalesApp_Dal.AssemblyInfo.cs
+C:\Users\USER\Documents\GitHub\SalesApp_\SalesApp_Dal\obj\Debug\net5.0-windows\SalesApp_Dal.csproj.CoreCompileInputs.cache
+C:\Users\USER\Documents\GitHub\SalesApp_\SalesApp_Dal\obj\Debug\net5.0-windows\SalesApp_Dal.dll
+C:\Users\USER\Documents\GitHub\SalesApp_\SalesApp_Dal\obj\Debug\net5.0-windows\ref\SalesApp_Dal.dll
+C:\Users\USER\Documents\GitHub\SalesApp_\SalesApp_Dal\obj\Debug\net5.0-windows\SalesApp_Dal.pdb

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesApp", "COMPLETE_FLAT_UI\SalesApp.csproj", "{2C6921B3-8558-4914-8254-11C9EE505B00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesApp_Dal", "SalesApp_Dal\SalesApp_Dal.csproj", "{900C0C64-20A3-4A8F-ACA6-08F4A88EDC96}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C6921B3-8558-4914-8254-11C9EE505B00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C6921B3-8558-4914-8254-11C9EE505B00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C6921B3-8558-4914-8254-11C9EE505B00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C6921B3-8558-4914-8254-11C9EE505B00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{900C0C64-20A3-4A8F-ACA6-08F4A88EDC96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{900C0C64-20A3-4A8F-ACA6-08F4A88EDC96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{900C0C64-20A3-4A8F-ACA6-08F4A88EDC96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{900C0C64-20A3-4A8F-ACA6-08F4A88EDC96}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E3200EC-EBC7-45E6-8BF7-90CC508F40E3}
+	EndGlobalSection
+EndGlobal
