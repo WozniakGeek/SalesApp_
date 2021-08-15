@@ -47,7 +47,7 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.button6 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.BtnInventario = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btnMembresia = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -120,33 +120,33 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("DFMincho-W5", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.LightGray;
             this.label5.Location = new System.Drawing.Point(83, 54);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 16);
+            this.label5.Size = new System.Drawing.Size(45, 16);
             this.label5.TabIndex = 7;
             this.label5.Text = "Cargo";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("DFMincho-W5", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.LightGray;
             this.label4.Location = new System.Drawing.Point(83, 36);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 16);
+            this.label4.Size = new System.Drawing.Size(97, 16);
             this.label4.TabIndex = 6;
             this.label4.Text = "Apellidos User";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("DFMincho-W5", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.LightGray;
             this.label3.Location = new System.Drawing.Point(83, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 16);
+            this.label3.Size = new System.Drawing.Size(67, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Nombres ";
             // 
@@ -154,11 +154,11 @@
             // 
             this.lbFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbFecha.AutoSize = true;
-            this.lbFecha.Font = new System.Drawing.Font("DFMincho-W5", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lbFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lbFecha.ForeColor = System.Drawing.Color.White;
             this.lbFecha.Location = new System.Drawing.Point(608, 71);
             this.lbFecha.Name = "lbFecha";
-            this.lbFecha.Size = new System.Drawing.Size(209, 16);
+            this.lbFecha.Size = new System.Drawing.Size(224, 20);
             this.lbFecha.TabIndex = 4;
             this.lbFecha.Text = "Lunes, 26 de septiembre 2018";
             // 
@@ -176,11 +176,11 @@
             // 
             this.lblHora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHora.AutoSize = true;
-            this.lblHora.Font = new System.Drawing.Font("DFMincho-W5", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.LightGray;
             this.lblHora.Location = new System.Drawing.Point(612, 11);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(205, 53);
+            this.lblHora.Size = new System.Drawing.Size(205, 54);
             this.lblHora.TabIndex = 1;
             this.lblHora.Text = "21:49:45";
             // 
@@ -194,7 +194,7 @@
             this.panelMenu.Controls.Add(this.pictureBox6);
             this.panelMenu.Controls.Add(this.button6);
             this.panelMenu.Controls.Add(this.pictureBox3);
-            this.panelMenu.Controls.Add(this.button3);
+            this.panelMenu.Controls.Add(this.BtnInventario);
             this.panelMenu.Controls.Add(this.pictureBox4);
             this.panelMenu.Controls.Add(this.btnMembresia);
             this.panelMenu.Controls.Add(this.pictureBox2);
@@ -248,7 +248,7 @@
             this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("DFMincho-W5", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.Silver;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -277,7 +277,7 @@
             this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("DFMincho-W5", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.Silver;
             this.button6.Image = global::COMPLETE_FLAT_UI.Properties.Resources.APs;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -298,24 +298,24 @@
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
             // 
-            // button3
+            // BtnInventario
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("DFMincho-W5", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Silver;
-            this.button3.Image = global::COMPLETE_FLAT_UI.Properties.Resources.Planes;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 218);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(230, 40);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Planes";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.BtnInventario.Cursor = System.Windows.Forms.Cursors.Default;
+            this.BtnInventario.FlatAppearance.BorderSize = 0;
+            this.BtnInventario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.BtnInventario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.BtnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnInventario.ForeColor = System.Drawing.Color.Silver;
+            this.BtnInventario.Image = global::COMPLETE_FLAT_UI.Properties.Resources.Planes;
+            this.BtnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnInventario.Location = new System.Drawing.Point(0, 218);
+            this.BtnInventario.Name = "BtnInventario";
+            this.BtnInventario.Size = new System.Drawing.Size(230, 40);
+            this.BtnInventario.TabIndex = 6;
+            this.BtnInventario.Text = "Planes";
+            this.BtnInventario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnInventario.UseVisualStyleBackColor = true;
             // 
             // pictureBox4
             // 
@@ -333,7 +333,7 @@
             this.btnMembresia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnMembresia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
             this.btnMembresia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMembresia.Font = new System.Drawing.Font("DFMincho-W5", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMembresia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMembresia.ForeColor = System.Drawing.Color.Silver;
             this.btnMembresia.Image = global::COMPLETE_FLAT_UI.Properties.Resources.Membresia;
             this.btnMembresia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -362,7 +362,7 @@
             this.btnListaClientes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnListaClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
             this.btnListaClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListaClientes.Font = new System.Drawing.Font("DFMincho-W5", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListaClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListaClientes.ForeColor = System.Drawing.Color.Silver;
             this.btnListaClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnListaClientes.Image")));
             this.btnListaClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -391,7 +391,7 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("DFMincho-W5", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Silver;
             this.button1.Image = global::COMPLETE_FLAT_UI.Properties.Resources.Dashboard;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -418,6 +418,7 @@
             this.PanelBarraTitulo.Name = "PanelBarraTitulo";
             this.PanelBarraTitulo.Size = new System.Drawing.Size(1100, 43);
             this.PanelBarraTitulo.TabIndex = 1;
+            this.PanelBarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelBarraTitulo_Paint);
             this.PanelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBarraTitulo_MouseDown);
             // 
             // pictureBox8
@@ -433,11 +434,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("DFMincho-W5", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(35, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 16);
+            this.label1.Size = new System.Drawing.Size(88, 16);
             this.label1.TabIndex = 4;
             this.label1.Text = "ISP SYSTEM";
             // 
@@ -573,7 +574,7 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button BtnInventario;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button btnMembresia;
         private System.Windows.Forms.PictureBox pictureBox2;

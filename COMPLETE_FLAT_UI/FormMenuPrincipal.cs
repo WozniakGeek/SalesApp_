@@ -205,6 +205,12 @@ namespace COMPLETE_FLAT_UI
             frm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
             AbrirFormEnPanel(frm);
         }
+
+        private void PanelBarraTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         //METODO PARA HORA Y FECHA ACTUAL ----------------------------------------------------------
         private void tmFechaHora_Tick(object sender, EventArgs e)
         {
