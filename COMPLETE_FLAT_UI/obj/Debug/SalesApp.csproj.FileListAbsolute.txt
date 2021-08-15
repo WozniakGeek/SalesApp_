@@ -3,7 +3,6 @@ C:\Users\USER\Dropbox\PC\Documents\GitHub\SalesApp_\COMPLETE_FLAT_UI\bin\Debug\C
 C:\Users\USER\Dropbox\PC\Documents\GitHub\SalesApp_\COMPLETE_FLAT_UI\bin\Debug\COMPLETE_FLAT_UI.application
 C:\Users\USER\Dropbox\PC\Documents\GitHub\SalesApp_\COMPLETE_FLAT_UI\bin\Debug\COMPLETE_FLAT_UI.exe
 C:\Users\USER\Dropbox\PC\Documents\GitHub\SalesApp_\COMPLETE_FLAT_UI\bin\Debug\COMPLETE_FLAT_UI.pdb
-C:\Users\USER\Dropbox\PC\Documents\GitHub\SalesApp_\COMPLETE_FLAT_UI\obj\Debug\SalesApp.csproj.AssemblyReference.cache
 C:\Users\USER\Dropbox\PC\Documents\GitHub\SalesApp_\COMPLETE_FLAT_UI\obj\Debug\COMPLETE_FLAT_UI.Form1.resources
 C:\Users\USER\Dropbox\PC\Documents\GitHub\SalesApp_\COMPLETE_FLAT_UI\obj\Debug\COMPLETE_FLAT_UI.FormListaClientes.resources
 C:\Users\USER\Dropbox\PC\Documents\GitHub\SalesApp_\COMPLETE_FLAT_UI\obj\Debug\COMPLETE_FLAT_UI.FormLogo.resources
@@ -18,3 +17,4 @@ C:\Users\USER\Dropbox\PC\Documents\GitHub\SalesApp_\COMPLETE_FLAT_UI\obj\Debug\C
 C:\Users\USER\Dropbox\PC\Documents\GitHub\SalesApp_\COMPLETE_FLAT_UI\obj\Debug\COMPLETE_FLAT_UI.application
 C:\Users\USER\Dropbox\PC\Documents\GitHub\SalesApp_\COMPLETE_FLAT_UI\obj\Debug\COMPLETE_FLAT_UI.exe
 C:\Users\USER\Dropbox\PC\Documents\GitHub\SalesApp_\COMPLETE_FLAT_UI\obj\Debug\COMPLETE_FLAT_UI.pdb
+C:\Users\USER\Dropbox\PC\Documents\GitHub\SalesApp_\COMPLETE_FLAT_UI\obj\Debug\COMPLETE_FLAT_UI.FormInventario.resources

@@ -211,6 +211,13 @@ namespace COMPLETE_FLAT_UI
 
         }
 
+        private void BtnInventario_Click(object sender, EventArgs e)
+        {
+            FormInventario FrmInv = new FormInventario();
+            FrmInv.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
+            AbrirFormEnPanel(FrmInv);
+        }
+
         //METODO PARA HORA Y FECHA ACTUAL ----------------------------------------------------------
         private void tmFechaHora_Tick(object sender, EventArgs e)
         {
