@@ -1,4 +1,5 @@
-﻿using System;
+﻿using COMPLETE_FLAT_UI.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,6 +45,40 @@ namespace COMPLETE_FLAT_UI
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var Nombre = txtnombre.Text;
+                var Apellido = txtapellido.Text;
+                var Telefono = txttelefono.Text;
+                var Idetificacion = txtdireccion.Text;
+                using (var db = new PuntoDeVentaEntities())
+                {
+                    Cliente cliente = new Cliente()
+                    {
+                        Name = Nombre.ToString() +" "+ Apellido.ToString(),
+                        Phone = int.Parse(Telefono.ToString()),
+                        Identification = int.Parse(Idetificacion.ToString())
+                    };
+                    db.Cliente.Add(cliente);
+                    db.SaveChanges();
+
+                }
+                this.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtdocument_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using COMPLETE_FLAT_UI.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,7 +39,7 @@ namespace COMPLETE_FLAT_UI
             FormMantCliente frm = new FormMantCliente();
             if (dataGridView1.SelectedRows.Count > 0)
             {               
-                frm.txtid.Text= dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                
                 frm.txtnombre.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 frm.txtapellido.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 frm.txtdireccion.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
@@ -59,7 +60,11 @@ namespace COMPLETE_FLAT_UI
 
         private void InsertarFilas()
         {
-            dataGridView1.Rows.Insert(0, "1", "Rafael", "Fernandez", "AV. Melgar", "56465");
+            using (var db = new PuntoDeVentaEntities())
+            {
+                var query = db.Cliente.Where(x => x.Active == true).ToList();
+            }
+                dataGridView1.Rows.Insert(0, "1", "Rafael", "Fernandez", "AV. Melgar", "56465");
             dataGridView1.Rows.Insert(1, "2", "Rafael", "Fernandez", "AV. Melgar", "56465");
             dataGridView1.Rows.Insert(2, "3", "Rafael", "Fernandez", "AV. Melgar", "56465");
             dataGridView1.Rows.Insert(3, "4", "Rafael", "Fernandez", "AV. Melgar", "56465");

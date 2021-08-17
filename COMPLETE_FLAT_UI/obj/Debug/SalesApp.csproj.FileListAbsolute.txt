@@ -18,3 +18,9 @@ C:\Users\USER\Dropbox\PC\Documents\GitHub\SalesApp_\COMPLETE_FLAT_UI\obj\Debug\C
 C:\Users\USER\Dropbox\PC\Documents\GitHub\SalesApp_\COMPLETE_FLAT_UI\obj\Debug\COMPLETE_FLAT_UI.exe
 C:\Users\USER\Dropbox\PC\Documents\GitHub\SalesApp_\COMPLETE_FLAT_UI\obj\Debug\COMPLETE_FLAT_UI.pdb
 C:\Users\USER\Dropbox\PC\Documents\GitHub\SalesApp_\COMPLETE_FLAT_UI\obj\Debug\COMPLETE_FLAT_UI.FormInventario.resources
+C:\Users\USER\Dropbox\PC\Documents\GitHub\SalesApp_\COMPLETE_FLAT_UI\obj\Debug\SalesApp.csproj.AssemblyReference.cache
+C:\Users\USER\Dropbox\PC\Documents\GitHub\SalesApp_\COMPLETE_FLAT_UI\bin\Debug\EntityFramework.dll
+C:\Users\USER\Dropbox\PC\Documents\GitHub\SalesApp_\COMPLETE_FLAT_UI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\USER\Dropbox\PC\Documents\GitHub\SalesApp_\COMPLETE_FLAT_UI\bin\Debug\EntityFramework.xml
+C:\Users\USER\Dropbox\PC\Documents\GitHub\SalesApp_\COMPLETE_FLAT_UI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\USER\Dropbox\PC\Documents\GitHub\SalesApp_\COMPLETE_FLAT_UI\obj\Debug\SalesApp.csproj.CopyComplete
