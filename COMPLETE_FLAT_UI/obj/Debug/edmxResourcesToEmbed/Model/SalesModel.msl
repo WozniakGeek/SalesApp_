@@ -112,8 +112,10 @@
     <EntitySetMapping Name="Cliente">
       <EntityTypeMapping TypeName="PuntoDeVentaModel.Cliente">
         <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="Active" ColumnName="Active" />
           <ScalarProperty Name="Identification" ColumnName="Identification" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>

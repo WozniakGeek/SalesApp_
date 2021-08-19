@@ -16,6 +16,7 @@ namespace COMPLETE_FLAT_UI.Model
     {
         public long Id { get; set; }
         public string Name { get; set; }
+        public string LastName { get; set; }
         public Nullable<int> Phone { get; set; }
         public Nullable<int> Identification { get; set; }
         public Nullable<bool> Active { get; set; }

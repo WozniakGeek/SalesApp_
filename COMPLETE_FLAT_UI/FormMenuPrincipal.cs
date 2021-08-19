@@ -15,12 +15,14 @@ namespace COMPLETE_FLAT_UI
     public partial class FormMenuPrincipal : Form
     {
         //Constructor
+        
         public FormMenuPrincipal()
         {
             InitializeComponent();
             //Estas lineas eliminan los parpadeos del formulario o controles en la interfaz grafica (Pero no en un 100%)
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.DoubleBuffered = true;
+            
         }
         //METODO PARA REDIMENCIONAR/CAMBIAR TAMAÑO A FORMULARIO  TIEMPO DE EJECUCION ----------------------------------------------------------
         private int tolerance = 15;
@@ -65,13 +67,14 @@ namespace COMPLETE_FLAT_UI
             base.OnPaint(e);
             ControlPaint.DrawSizeGrip(e.Graphics, Color.Transparent, sizeGripRectangle);
         }
-       
+
         //METODO PARA ARRASTRAR EL FORMULARIO---------------------------------------------------------------------
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
 
         private void PanelBarraTitulo_MouseDown(object sender, MouseEventArgs e)
         {
@@ -146,13 +149,14 @@ namespace COMPLETE_FLAT_UI
             //    panelMenu.Width = 55;
         }
 
+
         private void tmExpandirMenu_Tick(object sender, EventArgs e)
         {
             if (panelMenu.Width >= 230)
                 this.tmExpandirMenu.Stop();
             else
                 panelMenu.Width = panelMenu.Width + 5;
-            
+
         }
 
         private void tmContraerMenu_Tick(object sender, EventArgs e)
@@ -171,7 +175,7 @@ namespace COMPLETE_FLAT_UI
             Form fh = formHijo as Form;
             fh.TopLevel = false;
             fh.FormBorderStyle = FormBorderStyle.None;
-            fh.Dock = DockStyle.Fill;            
+            fh.Dock = DockStyle.Fill;
             this.panelContenedorForm.Controls.Add(fh);
             this.panelContenedorForm.Tag = fh;
             fh.Show();
@@ -224,14 +228,14 @@ namespace COMPLETE_FLAT_UI
             lbFecha.Text = DateTime.Now.ToLongDateString();
             lblHora.Text = DateTime.Now.ToString("HH:mm:ssss");
         }
-        
+
 
         private void button5_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(new Form1());
         }
 
-        
+
 
     }
 }

@@ -5,9 +5,11 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="varchar" MaxLength="200" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" />
     <Property Name="Phone" Type="int" />
     <Property Name="Identification" Type="int" />
+    <Property Name="Active" Type="bit" />
   </EntityType>
   <EntityType Name="cState">
     <Key>

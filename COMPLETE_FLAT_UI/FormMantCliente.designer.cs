@@ -53,7 +53,7 @@
             this.BarraTitulo.Controls.Add(this.BtnCerrar);
             this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.BarraTitulo.Location = new System.Drawing.Point(0, 0);
-            this.BarraTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BarraTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.BarraTitulo.Name = "BarraTitulo";
             this.BarraTitulo.Size = new System.Drawing.Size(769, 47);
             this.BarraTitulo.TabIndex = 2;
@@ -79,7 +79,7 @@
             this.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCerrar.Image = global::COMPLETE_FLAT_UI.Properties.Resources.Close;
             this.BtnCerrar.Location = new System.Drawing.Point(719, 0);
-            this.BtnCerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnCerrar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnCerrar.Name = "BtnCerrar";
             this.BtnCerrar.Size = new System.Drawing.Size(51, 47);
             this.BtnCerrar.TabIndex = 4;
@@ -90,7 +90,7 @@
             // 
             this.txtnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnombre.Location = new System.Drawing.Point(156, 100);
-            this.txtnombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtnombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(324, 26);
             this.txtnombre.TabIndex = 3;
@@ -99,7 +99,7 @@
             // 
             this.txtapellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtapellido.Location = new System.Drawing.Point(156, 143);
-            this.txtapellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtapellido.Margin = new System.Windows.Forms.Padding(4);
             this.txtapellido.Name = "txtapellido";
             this.txtapellido.Size = new System.Drawing.Size(324, 26);
             this.txtapellido.TabIndex = 4;
@@ -108,7 +108,7 @@
             // 
             this.txtdireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdireccion.Location = new System.Drawing.Point(156, 189);
-            this.txtdireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtdireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtdireccion.Name = "txtdireccion";
             this.txtdireccion.Size = new System.Drawing.Size(324, 26);
             this.txtdireccion.TabIndex = 5;
@@ -117,7 +117,7 @@
             // 
             this.txttelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttelefono.Location = new System.Drawing.Point(156, 228);
-            this.txttelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txttelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txttelefono.Name = "txttelefono";
             this.txttelefono.Size = new System.Drawing.Size(324, 26);
             this.txttelefono.TabIndex = 6;
@@ -133,7 +133,7 @@
             this.label2.Size = new System.Drawing.Size(82, 20);
             this.label2.TabIndex = 7;
             this.label2.Text = "Nombres:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            //this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -179,7 +179,7 @@
             this.BtnGuardarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnGuardarCliente.ForeColor = System.Drawing.Color.White;
             this.BtnGuardarCliente.Location = new System.Drawing.Point(170, 288);
-            this.BtnGuardarCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnGuardarCliente.Margin = new System.Windows.Forms.Padding(4);
             this.BtnGuardarCliente.Name = "BtnGuardarCliente";
             this.BtnGuardarCliente.Size = new System.Drawing.Size(133, 43);
             this.BtnGuardarCliente.TabIndex = 11;
@@ -195,7 +195,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Location = new System.Drawing.Point(347, 288);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(133, 43);
             this.btnCancelar.TabIndex = 12;
@@ -207,7 +207,7 @@
             // 
             this.pictureBox1.Image = global::COMPLETE_FLAT_UI.Properties.Resources.icono_cliente;
             this.pictureBox1.Location = new System.Drawing.Point(535, 68);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(184, 188);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -232,7 +232,7 @@
             this.Controls.Add(this.txtnombre);
             this.Controls.Add(this.BarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMantCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormMantCliente";
