@@ -1,0 +1,711 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PuntoDeVentaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+          <Property Name="LastName" Type="varchar" MaxLength="100" />
+          <Property Name="Phone" Type="int" />
+          <Property Name="Identification" Type="int" />
+          <Property Name="Active" Type="bit" />
+        </EntityType>
+        <EntityType Name="cState">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="detalle_entrada">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id_entrada" Type="int" />
+          <Property Name="costo_unitario" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="idProducto" Type="int" />
+        </EntityType>
+        <EntityType Name="detalle_perdida">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_perdida" Type="int" />
+          <Property Name="costo_unitario" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="idProducto" Type="int" />
+          <Property Name="cantidad" Type="int" />
+        </EntityType>
+        <EntityType Name="detalle_venta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_venta" Type="int" />
+          <Property Name="costo_unitario" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="precio_unitario" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="idProducto" Type="int" />
+        </EntityType>
+        <EntityType Name="entrada">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="total" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="idState" Type="int" />
+        </EntityType>
+        <EntityType Name="perdida">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="idState" Type="int" Nullable="false" />
+          <Property Name="total" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="producto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="codigo" Type="varchar" MaxLength="50" />
+          <Property Name="idState" Type="int" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="precio" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="costo" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="existencia" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" />
+          <Property Name="Rol" Type="bigint" />
+          <Property Name="Phone" Type="int" />
+          <Property Name="Identification" Type="int" />
+        </EntityType>
+        <EntityType Name="venta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="total" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="idState" Type="int" />
+        </EntityType>
+        <Association Name="FK_detalle_entrada_entrada">
+          <End Role="entrada" Type="Self.entrada" Multiplicity="1" />
+          <End Role="detalle_entrada" Type="Self.detalle_entrada" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="entrada">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="detalle_entrada">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_detalle_entrada_producto">
+          <End Role="producto" Type="Self.producto" Multiplicity="0..1" />
+          <End Role="detalle_entrada" Type="Self.detalle_entrada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="producto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="detalle_entrada">
+              <PropertyRef Name="idProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_detalle_perdida_perdida">
+          <End Role="producto" Type="Self.producto" Multiplicity="0..1" />
+          <End Role="detalle_perdida" Type="Self.detalle_perdida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="producto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="detalle_perdida">
+              <PropertyRef Name="idProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_detalle_perdida_perdida1">
+          <End Role="perdida" Type="Self.perdida" Multiplicity="0..1" />
+          <End Role="detalle_perdida" Type="Self.detalle_perdida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perdida">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="detalle_perdida">
+              <PropertyRef Name="id_perdida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_detalle_venta_venta">
+          <End Role="venta" Type="Self.venta" Multiplicity="1" />
+          <End Role="detalle_venta" Type="Self.detalle_venta" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="venta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="detalle_venta">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_entrada_cState">
+          <End Role="cState" Type="Self.cState" Multiplicity="0..1" />
+          <End Role="entrada" Type="Self.entrada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cState">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="entrada">
+              <PropertyRef Name="idState" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_perdida_cState">
+          <End Role="cState" Type="Self.cState" Multiplicity="1" />
+          <End Role="perdida" Type="Self.perdida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cState">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="perdida">
+              <PropertyRef Name="idState" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_producto_cState">
+          <End Role="cState" Type="Self.cState" Multiplicity="0..1" />
+          <End Role="producto" Type="Self.producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cState">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="producto">
+              <PropertyRef Name="idState" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_venta_cState">
+          <End Role="cState" Type="Self.cState" Multiplicity="0..1" />
+          <End Role="venta" Type="Self.venta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cState">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="venta">
+              <PropertyRef Name="idState" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PuntoDeVentaModelStoreContainer">
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cState" EntityType="Self.cState" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="detalle_entrada" EntityType="Self.detalle_entrada" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="detalle_perdida" EntityType="Self.detalle_perdida" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="detalle_venta" EntityType="Self.detalle_venta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="entrada" EntityType="Self.entrada" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="perdida" EntityType="Self.perdida" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="producto" EntityType="Self.producto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="venta" EntityType="Self.venta" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_detalle_entrada_entrada" Association="Self.FK_detalle_entrada_entrada">
+            <End Role="entrada" EntitySet="entrada" />
+            <End Role="detalle_entrada" EntitySet="detalle_entrada" />
+          </AssociationSet>
+          <AssociationSet Name="FK_detalle_entrada_producto" Association="Self.FK_detalle_entrada_producto">
+            <End Role="producto" EntitySet="producto" />
+            <End Role="detalle_entrada" EntitySet="detalle_entrada" />
+          </AssociationSet>
+          <AssociationSet Name="FK_detalle_perdida_perdida" Association="Self.FK_detalle_perdida_perdida">
+            <End Role="producto" EntitySet="producto" />
+            <End Role="detalle_perdida" EntitySet="detalle_perdida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_detalle_perdida_perdida1" Association="Self.FK_detalle_perdida_perdida1">
+            <End Role="perdida" EntitySet="perdida" />
+            <End Role="detalle_perdida" EntitySet="detalle_perdida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_detalle_venta_venta" Association="Self.FK_detalle_venta_venta">
+            <End Role="venta" EntitySet="venta" />
+            <End Role="detalle_venta" EntitySet="detalle_venta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_entrada_cState" Association="Self.FK_entrada_cState">
+            <End Role="cState" EntitySet="cState" />
+            <End Role="entrada" EntitySet="entrada" />
+          </AssociationSet>
+          <AssociationSet Name="FK_perdida_cState" Association="Self.FK_perdida_cState">
+            <End Role="cState" EntitySet="cState" />
+            <End Role="perdida" EntitySet="perdida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_producto_cState" Association="Self.FK_producto_cState">
+            <End Role="cState" EntitySet="cState" />
+            <End Role="producto" EntitySet="producto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_venta_cState" Association="Self.FK_venta_cState">
+            <End Role="cState" EntitySet="cState" />
+            <End Role="venta" EntitySet="venta" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PuntoDeVentaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="cState">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="entrada" Relationship="Self.FK_entrada_cState" FromRole="cState" ToRole="entrada" />
+          <NavigationProperty Name="perdida" Relationship="Self.FK_perdida_cState" FromRole="cState" ToRole="perdida" />
+          <NavigationProperty Name="producto" Relationship="Self.FK_producto_cState" FromRole="cState" ToRole="producto" />
+          <NavigationProperty Name="venta" Relationship="Self.FK_venta_cState" FromRole="cState" ToRole="venta" />
+        </EntityType>
+        <EntityType Name="detalle_entrada">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id_entrada" Type="Int32" />
+          <Property Name="costo_unitario" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="idProducto" Type="Int32" />
+          <NavigationProperty Name="entrada" Relationship="Self.FK_detalle_entrada_entrada" FromRole="detalle_entrada" ToRole="entrada" />
+          <NavigationProperty Name="producto" Relationship="Self.FK_detalle_entrada_producto" FromRole="detalle_entrada" ToRole="producto" />
+        </EntityType>
+        <EntityType Name="detalle_perdida">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_perdida" Type="Int32" />
+          <Property Name="costo_unitario" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="idProducto" Type="Int32" />
+          <Property Name="cantidad" Type="Int32" />
+          <NavigationProperty Name="producto" Relationship="Self.FK_detalle_perdida_perdida" FromRole="detalle_perdida" ToRole="producto" />
+          <NavigationProperty Name="perdida" Relationship="Self.FK_detalle_perdida_perdida1" FromRole="detalle_perdida" ToRole="perdida" />
+        </EntityType>
+        <EntityType Name="detalle_venta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_venta" Type="Int32" />
+          <Property Name="costo_unitario" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="precio_unitario" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="idProducto" Type="Int32" />
+          <NavigationProperty Name="venta" Relationship="Self.FK_detalle_venta_venta" FromRole="detalle_venta" ToRole="venta" />
+        </EntityType>
+        <EntityType Name="entrada">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="total" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="idState" Type="Int32" />
+          <NavigationProperty Name="cState" Relationship="Self.FK_entrada_cState" FromRole="entrada" ToRole="cState" />
+          <NavigationProperty Name="detalle_entrada" Relationship="Self.FK_detalle_entrada_entrada" FromRole="entrada" ToRole="detalle_entrada" />
+        </EntityType>
+        <EntityType Name="perdida">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="idState" Type="Int32" Nullable="false" />
+          <Property Name="total" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="cState" Relationship="Self.FK_perdida_cState" FromRole="perdida" ToRole="cState" />
+          <NavigationProperty Name="detalle_perdida" Relationship="Self.FK_detalle_perdida_perdida1" FromRole="perdida" ToRole="detalle_perdida" />
+        </EntityType>
+        <EntityType Name="producto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idState" Type="Int32" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="precio" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="costo" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="existencia" Type="Int32" />
+          <NavigationProperty Name="cState" Relationship="Self.FK_producto_cState" FromRole="producto" ToRole="cState" />
+          <NavigationProperty Name="detalle_entrada" Relationship="Self.FK_detalle_entrada_producto" FromRole="producto" ToRole="detalle_entrada" />
+          <NavigationProperty Name="detalle_perdida" Relationship="Self.FK_detalle_perdida_perdida" FromRole="producto" ToRole="detalle_perdida" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Rol" Type="Int64" />
+          <Property Name="Phone" Type="Int32" />
+          <Property Name="Identification" Type="Int32" />
+        </EntityType>
+        <EntityType Name="venta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="total" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="idState" Type="Int32" />
+          <NavigationProperty Name="cState" Relationship="Self.FK_venta_cState" FromRole="venta" ToRole="cState" />
+          <NavigationProperty Name="detalle_venta" Relationship="Self.FK_detalle_venta_venta" FromRole="venta" ToRole="detalle_venta" />
+        </EntityType>
+        <Association Name="FK_entrada_cState">
+          <End Role="cState" Type="Self.cState" Multiplicity="0..1" />
+          <End Role="entrada" Type="Self.entrada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cState">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="entrada">
+              <PropertyRef Name="idState" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_perdida_cState">
+          <End Role="cState" Type="Self.cState" Multiplicity="1" />
+          <End Role="perdida" Type="Self.perdida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cState">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="perdida">
+              <PropertyRef Name="idState" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_producto_cState">
+          <End Role="cState" Type="Self.cState" Multiplicity="0..1" />
+          <End Role="producto" Type="Self.producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cState">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="producto">
+              <PropertyRef Name="idState" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_venta_cState">
+          <End Role="cState" Type="Self.cState" Multiplicity="0..1" />
+          <End Role="venta" Type="Self.venta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cState">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="venta">
+              <PropertyRef Name="idState" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_detalle_entrada_entrada">
+          <End Role="entrada" Type="Self.entrada" Multiplicity="1" />
+          <End Role="detalle_entrada" Type="Self.detalle_entrada" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="entrada">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="detalle_entrada">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_detalle_entrada_producto">
+          <End Role="producto" Type="Self.producto" Multiplicity="0..1" />
+          <End Role="detalle_entrada" Type="Self.detalle_entrada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="producto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="detalle_entrada">
+              <PropertyRef Name="idProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_detalle_perdida_perdida">
+          <End Role="producto" Type="Self.producto" Multiplicity="0..1" />
+          <End Role="detalle_perdida" Type="Self.detalle_perdida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="producto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="detalle_perdida">
+              <PropertyRef Name="idProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_detalle_perdida_perdida1">
+          <End Role="perdida" Type="Self.perdida" Multiplicity="0..1" />
+          <End Role="detalle_perdida" Type="Self.detalle_perdida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perdida">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="detalle_perdida">
+              <PropertyRef Name="id_perdida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_detalle_venta_venta">
+          <End Role="venta" Type="Self.venta" Multiplicity="1" />
+          <End Role="detalle_venta" Type="Self.detalle_venta" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="venta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="detalle_venta">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PuntoDeVentaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="cState" EntityType="Self.cState" />
+          <EntitySet Name="detalle_entrada" EntityType="Self.detalle_entrada" />
+          <EntitySet Name="detalle_perdida" EntityType="Self.detalle_perdida" />
+          <EntitySet Name="detalle_venta" EntityType="Self.detalle_venta" />
+          <EntitySet Name="entrada" EntityType="Self.entrada" />
+          <EntitySet Name="perdida" EntityType="Self.perdida" />
+          <EntitySet Name="producto" EntityType="Self.producto" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+          <EntitySet Name="venta" EntityType="Self.venta" />
+          <AssociationSet Name="FK_entrada_cState" Association="Self.FK_entrada_cState">
+            <End Role="cState" EntitySet="cState" />
+            <End Role="entrada" EntitySet="entrada" />
+          </AssociationSet>
+          <AssociationSet Name="FK_perdida_cState" Association="Self.FK_perdida_cState">
+            <End Role="cState" EntitySet="cState" />
+            <End Role="perdida" EntitySet="perdida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_producto_cState" Association="Self.FK_producto_cState">
+            <End Role="cState" EntitySet="cState" />
+            <End Role="producto" EntitySet="producto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_venta_cState" Association="Self.FK_venta_cState">
+            <End Role="cState" EntitySet="cState" />
+            <End Role="venta" EntitySet="venta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_detalle_entrada_entrada" Association="Self.FK_detalle_entrada_entrada">
+            <End Role="entrada" EntitySet="entrada" />
+            <End Role="detalle_entrada" EntitySet="detalle_entrada" />
+          </AssociationSet>
+          <AssociationSet Name="FK_detalle_entrada_producto" Association="Self.FK_detalle_entrada_producto">
+            <End Role="producto" EntitySet="producto" />
+            <End Role="detalle_entrada" EntitySet="detalle_entrada" />
+          </AssociationSet>
+          <AssociationSet Name="FK_detalle_perdida_perdida" Association="Self.FK_detalle_perdida_perdida">
+            <End Role="producto" EntitySet="producto" />
+            <End Role="detalle_perdida" EntitySet="detalle_perdida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_detalle_perdida_perdida1" Association="Self.FK_detalle_perdida_perdida1">
+            <End Role="perdida" EntitySet="perdida" />
+            <End Role="detalle_perdida" EntitySet="detalle_perdida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_detalle_venta_venta" Association="Self.FK_detalle_venta_venta">
+            <End Role="venta" EntitySet="venta" />
+            <End Role="detalle_venta" EntitySet="detalle_venta" />
+          </AssociationSet>
+          <EntitySet Name="Cliente" EntityType="PuntoDeVentaModel.Cliente" />
+        </EntityContainer>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="Int32" />
+          <Property Name="Identification" Type="Int32" />
+          <Property Name="Active" Type="Boolean" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PuntoDeVentaModelStoreContainer" CdmEntityContainer="PuntoDeVentaEntities">
+          <EntitySetMapping Name="cState">
+            <EntityTypeMapping TypeName="PuntoDeVentaModel.cState">
+              <MappingFragment StoreEntitySet="cState">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="detalle_entrada">
+            <EntityTypeMapping TypeName="PuntoDeVentaModel.detalle_entrada">
+              <MappingFragment StoreEntitySet="detalle_entrada">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_entrada" ColumnName="id_entrada" />
+                <ScalarProperty Name="costo_unitario" ColumnName="costo_unitario" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="detalle_perdida">
+            <EntityTypeMapping TypeName="PuntoDeVentaModel.detalle_perdida">
+              <MappingFragment StoreEntitySet="detalle_perdida">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_perdida" ColumnName="id_perdida" />
+                <ScalarProperty Name="costo_unitario" ColumnName="costo_unitario" />
+                <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="detalle_venta">
+            <EntityTypeMapping TypeName="PuntoDeVentaModel.detalle_venta">
+              <MappingFragment StoreEntitySet="detalle_venta">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_venta" ColumnName="id_venta" />
+                <ScalarProperty Name="costo_unitario" ColumnName="costo_unitario" />
+                <ScalarProperty Name="precio_unitario" ColumnName="precio_unitario" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="entrada">
+            <EntityTypeMapping TypeName="PuntoDeVentaModel.entrada">
+              <MappingFragment StoreEntitySet="entrada">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="idState" ColumnName="idState" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="perdida">
+            <EntityTypeMapping TypeName="PuntoDeVentaModel.perdida">
+              <MappingFragment StoreEntitySet="perdida">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="idState" ColumnName="idState" />
+                <ScalarProperty Name="total" ColumnName="total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="producto">
+            <EntityTypeMapping TypeName="PuntoDeVentaModel.producto">
+              <MappingFragment StoreEntitySet="producto">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="idState" ColumnName="idState" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="costo" ColumnName="costo" />
+                <ScalarProperty Name="existencia" ColumnName="existencia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="PuntoDeVentaModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="PuntoDeVentaModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Rol" ColumnName="Rol" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Identification" ColumnName="Identification" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="venta">
+            <EntityTypeMapping TypeName="PuntoDeVentaModel.venta">
+              <MappingFragment StoreEntitySet="venta">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="idState" ColumnName="idState" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cliente">
+            <EntityTypeMapping TypeName="PuntoDeVentaModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Identification" ColumnName="Identification" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
